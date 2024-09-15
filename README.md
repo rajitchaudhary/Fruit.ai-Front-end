@@ -6,6 +6,13 @@ To log into the application, use the following credentials:
 
 - **Email:** demo@example.com
 - **Password:** password123
+- 
+### Register credentials
+
+To Register into the application, use the following credentials:
+-**Mobile number**: Any 10-digit number
+-**OTP**: 1234
+  
 
 ### Prerequisites
 
