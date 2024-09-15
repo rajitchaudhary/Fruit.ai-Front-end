@@ -11,7 +11,7 @@ const FruitList = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/fruits")
+      .get("https://fruit-ai-lkdx.onrender.com/fruits")
       .then((response) => {
         setFruits(Object.values(response.data));
       })
@@ -37,7 +37,7 @@ const FruitList = () => {
     ]);
 
     axios
-      .post("http://localhost:5000/chat", {
+      .post("https://fruit-ai-lkdx.onrender.com/chat", {
         message: userMessage,
         selectedFruit: selectedFruit ? selectedFruit.name : null,
       })
