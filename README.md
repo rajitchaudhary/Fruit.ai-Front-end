@@ -1,5 +1,11 @@
 ## Project Overview
 Fruit.ai is a health manager application designed to provide users with features like chatbot interactions, fruit-related FAQs, language translation, and more. The product is optimized for both mobile and web platforms, offering a clean and intuitive user experience
+### Logging credentials
+
+To log into the application, use the following credentials:
+
+- **Email:** demo@example.com
+- **Password:** password123
 
 ### Prerequisites
 
@@ -34,13 +40,6 @@ Fruit.ai is a health manager application designed to provide users with features
 
    This will start the React development server and open the application in your default web browser. The app will be available at `http://localhost:3000`.
 
-### Logging credentials
-
-To log into the application, use the following credentials:
-
-- **Email:** demo@example.com
-- **Password:** password123
-
 ### Project Structure
 
 - **Login Page:** `/login`
@@ -56,4 +55,6 @@ To log into the application, use the following credentials:
 The frontend interacts with a Flask backend that provides:
 
 - **CRUD Operations on FAQ**
+- **Google translator**
+- **Chat bot Gemini API**
 
