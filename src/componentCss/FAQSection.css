@@ -5,8 +5,16 @@
     align-items: center; /* Center the FAQ cards in the section */
     padding: 20px;       /* Add padding around the section */
     background: linear-gradient(135deg, #d4e1f5, #fcc8f8, #baf6da);
+    min-height: 100vh;   /* Ensure section covers full viewport height */
 }
 
+/* Container for FAQ content to manage layout */
+.faq-content-container {
+    flex: 1; /* Allow content to push the button down */
+    width: 100%;
+}
+
+/* Title of FAQ section */
 .faq-section-title {
     font-size: 2rem;     /* Larger title for the section */
     color: #333333;
@@ -27,6 +35,11 @@
     width: 100%;            /* Full width on mobile */
     max-width: 600px;       /* Max width for larger screens */
     box-sizing: border-box;
+}
+
+/* Add padding to the top of the first FAQ card */
+.faq-card:first-of-type {
+    padding-top: 40px; /* Space to ensure it doesn’t overlap with the button */
 }
 
 .faq-image img {
@@ -58,17 +71,20 @@
     margin-top: 0;
 }
 
-.add-faq-btn{
-    margin:10px;
-    padding: 8px 16px;
+/* Button styling */
+.add-faq-btn {
+    position: fixed;      /* Fixed positioning */
+    bottom: 20px;         /* Distance from the bottom */
+    right: 20px;          /* Distance from the right */
+    padding: 10px 20px;
     border: none;
     border-radius: 4px;
     font-weight: bold;
     cursor: pointer;
     outline: none;
-    flex-grow: 1;
-    background-color: blue; /* Green */
+    background-color: blue; /* Blue */
     color: white;
+    z-index: 10; /* Ensure it is above other content */
 }
 
 /* Media Query for Tablets and Mobile Devices (up to 768px width) */
@@ -125,74 +141,6 @@
 
     .faq-content p {
         font-size: 0.85rem;   /* Smaller text */
-    }
-}
-
-/* Chat Container Styles */
-.chat-container {
-    display: flex;
-    flex-direction: column;
-    max-width: 800px; /* Max width for desktop */
-    margin: 0 auto; /* Center the chat container */
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow-y: auto; /* Allow vertical scrolling if content overflows */
-}
-
-/* Message Styles */
-.chat-message {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-    max-width: 100%; /* Ensure messages fit within container */
-    overflow-wrap: break-word; /* Break long words */
-    word-wrap: break-word; /* Ensure long text wraps */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
-}
-
-/* User and Bot Messages */
-.user-message, .bot-message {
-    padding: 10px;
-    border-radius: 15px;
-    max-width: 80%; /* Limit message width */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-/* User Message Styles */
-.user-message {
-    align-self: flex-end; /* Align user messages to the right */
-    background-color: #4CAF50; /* Green background */
-    color: white;
-}
-
-/* Bot Message Styles */
-.bot-message {
-    align-self: flex-start; /* Align bot messages to the left */
-    background-color: #ffffff; /* White background */
-    color: #333333;
-}
-
-/* Adjustments for Desktop View */
-@media (min-width: 769px) {
-    .chat-container {
-        padding: 30px; /* Increase padding on larger screens */
-    }
-
-    .user-message, .bot-message {
-        font-size: 1rem; /* Adjust font size for larger screens */
-    }
-}
-
-/* Adjustments for Mobile View */
-@media (max-width: 768px) {
-    .chat-container {
-        padding: 10px; /* Reduced padding for smaller screens */
-    }
-
-    .user-message, .bot-message {
-        font-size: 0.9rem; /* Adjust font size for mobile */
     }
 }
 
