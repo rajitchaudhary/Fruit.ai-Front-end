@@ -2,15 +2,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import '../componentCss/translate.css'; // Custom CSS for styling
 
 const Translate = () => {
-  const [messages, setMessages] = useState([]);  // Store all messages
-  const [inputMessage, setInputMessage] = useState('');  // Store the input message
-  const messagesEndRef = useRef(null);  // To auto-scroll to the bottom
+  const [messages, setMessages] = useState([]); // Store all messages
+  const [inputMessage, setInputMessage] = useState(''); // Store the input message
+  const messagesEndRef = useRef(null); // To auto-scroll to the bottom
 
   // Function to handle sending a new message
   const handleSend = () => {
     if (inputMessage.trim() !== '') {
-      setMessages([...messages, inputMessage]);  // Add the new message to the array
-      setInputMessage('');  // Clear the input box after sending
+      setMessages([inputMessage, ...messages]); // Add the new message to the top
+      setInputMessage(''); // Clear the input box after sending
     }
   };
 
@@ -21,21 +21,26 @@ const Translate = () => {
     }
   }, [messages]);
 
-  // Load Google Translate script dynamically
+  // Ensure the Google Translate script is only added once
   useEffect(() => {
     const addGoogleTranslateScript = () => {
-      const script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-      script.async = true;
-      document.body.appendChild(script);
-
-      window.googleTranslateElementInit = () => {
-        new window.google.translate.TranslateElement(
-          { pageLanguage: 'en' }, 
-          'google_translate_element'
-        );
-      };
+      // Check if script is already added
+      if (!document.getElementById('google-translate-script')) {
+        const script = document.createElement('script');
+        script.id = 'google-translate-script';
+        script.type = 'text/javascript';
+        script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        script.async = true;
+        document.body.appendChild(script);
+        
+        // Initialize translate when script loads
+        window.googleTranslateElementInit = () => {
+          new window.google.translate.TranslateElement(
+            { pageLanguage: 'en' }, 
+            'google_translate_element'
+          );
+        };
+      }
     };
 
     addGoogleTranslateScript();
@@ -43,6 +48,9 @@ const Translate = () => {
 
   return (
     <div className="chat-container">
+      {/* Google Translate Widget */}
+      <div id="google_translate_element"></div>
+
       {/* Message List */}
       <div className="messages-container">
         {messages.length > 0 ? (
@@ -58,9 +66,6 @@ const Translate = () => {
         <div ref={messagesEndRef}></div>
       </div>
 
-      {/* Google Translate Widget */}
-      {/* <div id="google_translate_element"></div> */}
-      
       {/* Input Field and Send Button */}
       <div className="input-container">
         <input
