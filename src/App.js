@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './components/home';
+import Chat from './components/chat';
+import Translate from './components/translate';
+import About from './components/about';
+import Login from './components/login';
+import Register from './components/register';
+import OtpScreen from './components/otp';
+import Setup from './components/setup';
+import FAQSection from './components/FAQSection'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} /> {/* Show login page first */}
+        <Route path="/home" element={<Home />} /> {/* Home page after login */}
+        <Route path="/chat" element={<Chat />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/otp' element={<OtpScreen />} />
+        <Route path="/setup" element={<Setup />} />
+        <Route path="/translate" element={<Translate />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/FAQSection" element={<FAQSection />} />
+      </Routes>
+    </Router>
   );
 }
 
