@@ -128,6 +128,74 @@
     }
 }
 
+/* Chat Container Styles */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px; /* Max width for desktop */
+    margin: 0 auto; /* Center the chat container */
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+}
+
+/* Message Styles */
+.chat-message {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    max-width: 100%; /* Ensure messages fit within container */
+    overflow-wrap: break-word; /* Break long words */
+    word-wrap: break-word; /* Ensure long text wraps */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* User and Bot Messages */
+.user-message, .bot-message {
+    padding: 10px;
+    border-radius: 15px;
+    max-width: 80%; /* Limit message width */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* User Message Styles */
+.user-message {
+    align-self: flex-end; /* Align user messages to the right */
+    background-color: #4CAF50; /* Green background */
+    color: white;
+}
+
+/* Bot Message Styles */
+.bot-message {
+    align-self: flex-start; /* Align bot messages to the left */
+    background-color: #ffffff; /* White background */
+    color: #333333;
+}
+
+/* Adjustments for Desktop View */
+@media (min-width: 769px) {
+    .chat-container {
+        padding: 30px; /* Increase padding on larger screens */
+    }
+
+    .user-message, .bot-message {
+        font-size: 1rem; /* Adjust font size for larger screens */
+    }
+}
+
+/* Adjustments for Mobile View */
+@media (max-width: 768px) {
+    .chat-container {
+        padding: 10px; /* Reduced padding for smaller screens */
+    }
+
+    .user-message, .bot-message {
+        font-size: 0.9rem; /* Adjust font size for mobile */
+    }
+}
+
 /* Styles for the confirmation dialog */
 .confirm-dialog {
     position: fixed;
