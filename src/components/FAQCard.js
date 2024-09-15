@@ -6,11 +6,11 @@ const FAQCard = ({ id, image, title, description, onDelete, onEdit, altText }) =
   return (
     <div className="faq-card">
       <div className="faq-image">
-        <img src={image} alt={altText || title} />
+        <img src={image || 'default-image.jpg'} alt={altText || title || 'FAQ Image'} />
       </div>
       <div className="faq-content">
-        <h3>{title}</h3>
-        <p>{description}</p>
+        <h3>{title || 'No Title'}</h3>
+        <p>{description || 'No Description'}</p>
       </div>
       <div className="faq-actions">
         <button onClick={() => onEdit(id)} className="edit-btn">Edit</button>
@@ -19,6 +19,7 @@ const FAQCard = ({ id, image, title, description, onDelete, onEdit, altText }) =
     </div>
   );
 };
+
 
 FAQCard.propTypes = {
   id: PropTypes.number.isRequired,
@@ -35,4 +36,3 @@ FAQCard.defaultProps = {
 };
 
 export default FAQCard;
-
