@@ -51,12 +51,13 @@ To Register into the application, use the following credentials:
 ### Project Structure
 
 - **Login Page:** `/login`
+- **Register Page:** `/register`
 - **Home Page:** `/home`
 - **Chatbot Page:** `/chatbot`
 - **Translator Page:** `/translator`
 - **FAQ Page:** `/faq`
 - **About Page:** `/about`
-- **Register Page:** `/register`
+
 
 ### Backend Integration
 
