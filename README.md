@@ -2,6 +2,7 @@
 Fruit.ai is a health manager application designed to provide users with features like chatbot interactions, fruit-related FAQs, language translation, and more. The product is optimized for both mobile and web platforms, offering a clean and intuitive user experience
 
 Deploy Link - https://fruit-ai-front-end-zfoe.vercel.app/
+(API response may experience slight delays depending on server load)
 
 Video Demo for Mobile View (Google Drive Link)- https://drive.google.com/file/d/1tEg4ffgxjnqdgtZU3RSIEZqhvR8bnCoW/view?usp=drive_link 
 
