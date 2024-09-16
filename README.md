@@ -3,11 +3,9 @@ Fruit.ai is a health manager application designed to provide users with features
 
 Deploy Link - https://fruit-ai-front-end-zfoe.vercel.app/
 
-Video Demo for Mobile View (Google Drive Link)- 
-https://drive.google.com/file/d/1tEg4ffgxjnqdgtZU3RSIEZqhvR8bnCoW/view?usp=drive_link 
+Video Demo for Mobile View (Google Drive Link)- https://drive.google.com/file/d/1tEg4ffgxjnqdgtZU3RSIEZqhvR8bnCoW/view?usp=drive_link 
 
-Video Demo for Web View (Google Drive Link)-  
-https://drive.google.com/file/d/1EO36FzgbQ0-35NvK1xI6gTYJD8Sy-CtK/view?usp=drive_link
+Video Demo for Web View (Google Drive Link)- https://drive.google.com/file/d/1EO36FzgbQ0-35NvK1xI6gTYJD8Sy-CtK/view?usp=drive_link
 ### Logging credentials
 
 To log into the application, use the following credentials:
